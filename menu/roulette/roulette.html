@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ルーレット</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tui.css@1.0.0/tui.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="history" id="numberGrid"></div>
+    <div class="main">
+      <div class="roulette-container">
+        <div class="roulette">
+          <span class="number" id="rouletteNumber">0</span>
+        </div>
+        <button id="controlButton" onclick="toggleRoulette()">スタート</button>
+        <button id="resetButton" onclick="resetRoulette()">リセット</button>
+      </div>
+      <a href="../menu/menu.html"  style="color: #00ff00; text-decoration: none">メインメニューに戻る</a>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

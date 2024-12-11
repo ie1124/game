@@ -1,0 +1,119 @@
+body {
+  font-family: "Courier New", monospace;
+  background-color: black;
+  color: #00ff00;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding-right: 100px;
+  width: 100%;
+}
+
+h1 {
+  font-size: 96px; /* タイトルのフォントサイズをさらに大きく */
+  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+  margin-bottom: 40px;
+}
+
+.roulette-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* ルーレットとボタンを右端に配置 */
+  position: relative;
+}
+
+.roulette {
+  background: black;
+  border-radius: 50%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  width: 500px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.number {
+  font-size: 300px;
+  font-weight: bold;
+  padding-right: 140px;
+  color: #00ff00;
+  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.highlight {
+  font-size: 160px;
+  color: #ff0000;
+  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  text-decoration: none;
+  color: #00ff00;
+  font-size: 48px;
+  border: 4px solid #00ff00;
+  border-radius: 15px;
+  width: 600px;
+  height: 100px;
+  font-weight: bold;
+  transition: 0.3s;
+  background: black;
+  margin: 20px;
+  z-index: 2; /* ボタンを前面に表示 */
+}
+
+button:hover {
+  background-color: #333;
+}
+
+.history {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  display: grid;
+  grid-template-columns: repeat(10, 80px); /* 各番号の幅を大きく */
+  gap: 15px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.5);
+  z-index: 0; /* 履歴は最背面 */
+}
+
+.history div {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #00ff00;
+  border-radius: 15px;
+  font-size: 32px; /* 履歴の番号のフォントサイズを大きく */
+  font-weight: bold;
+  background-color: black;
+  color: #00ff00;
+  transition: background-color 0.3s ease;
+}
+
+.history .marked {
+  background-color: #ff0000;
+  color: #fff;
+}

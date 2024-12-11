@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>High&Low</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/nes.css@2.0.0/css/nes.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="main">
+      <div id="result">High&Low？</div>
+      <div class="card-container">
+        <div class="card-container-item">
+          <div class="card" id="currentCard">?</div>
+          <div class="left-card-buttons">
+            <div class="button-row">
+              <button
+                class="nes-btn is-primary"
+                id="shuffleBtn"
+                onclick="startRoulette()"
+              >
+                Start
+              </button>
+              <button
+                class="nes-btn is-warning"
+                id="stopBtn"
+                onclick="stopRoulette()"
+                disabled
+              >
+                Stop
+              </button>
+            </div>
+            <button
+              class="nes-btn is-info"
+              id="restartBtn"
+              onclick="startGame()"
+            >
+              Restart
+            </button>
+          </div>
+        </div>
+        <div class="right-card-container">
+          <div class="card" id="nextCard">?</div>
+          <button
+            class="nes-btn is-success"
+            id="judgeBtn"
+            onclick="judgeCard()"
+            disabled
+          >
+            Judgement
+          </button>
+        </div>
+      </div>
+      <div class="button-container">
+        <div class="button-group">
+          <button class="nes-btn is-error" id="highBtn" onclick="guess('high')">
+            High
+          </button>
+          <button class="nes-btn is-primary" id="lowBtn" onclick="guess('low')">
+            Low
+          </button>
+        </div>
+      </div>
+    </div>
+    <a href="../menu/menu.html" class="menu-link">menu</a>
+    <script src="script.js"></script>
+  </body>
+</html>
