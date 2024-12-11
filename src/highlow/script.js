@@ -23,6 +23,8 @@ function startGame() {
 function resetButtons() {
   const highBtn = document.getElementById("highBtn");
   const lowBtn = document.getElementById("lowBtn");
+
+  // ボタン状態をリセット
   highBtn.classList.remove("active", "inactive");
   lowBtn.classList.remove("active", "inactive");
 }
@@ -32,7 +34,6 @@ function startRoulette() {
     isRouletteRunning = true;
     document.getElementById("shuffleBtn").disabled = true;
     document.getElementById("stopBtn").disabled = false;
-
     rouletteInterval = setInterval(() => {
       currentCard = drawCard(true);
       updateDisplay(false);
@@ -55,10 +56,14 @@ function guess(choice) {
 
   if (choice === "high") {
     highBtn.classList.add("active");
+    highBtn.classList.remove("inactive");
     lowBtn.classList.add("inactive");
+    lowBtn.classList.remove("active");
   } else {
     lowBtn.classList.add("active");
+    lowBtn.classList.remove("inactive");
     highBtn.classList.add("inactive");
+    highBtn.classList.remove("active");
   }
 
   userChoice = choice;
@@ -73,7 +78,6 @@ function judgeCard() {
       : nextCard === currentCard
       ? "Draw!"
       : "You Lose...";
-
   document.getElementById("result").textContent = resultMessage;
   updateDisplay(true);
 }
